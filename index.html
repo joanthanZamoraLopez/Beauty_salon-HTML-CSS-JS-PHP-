@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Salon</title>
+    <link rel="preload" href="src/normalize.css" as="style">
+    <link rel="stylesheet" href="src/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="src/styles.css" as="style">
+    <link href="src/styles.css" rel="stylesheet">
+    <link href="src/galeria.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+</head>
+
+<body>
+    <header class="header contenido">
+
+        <h1 class="logo"> Beauty Salon Gallery</h1>
+    <nav class="navegacion-principal contenedor">
+      <a href="index.html">Inicio</a>
+      <a href="#galeria">Galeria</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    </header>
+    <div class="nav-bg">
+
+        <section class="hero">
+            <div class="contenedor_hero">
+                <div class="hero__overlay">
+                    <h2 class="hero__title">Uñas perfectas y estilo unico
+                        <p class="segunda">Explora nuestra galeria de manicura --Diseños,colores,Texturas</p>
+                    </h2>
+                </div>
+            </div>
+        </section>
+        
+        <main>
+            <div class="contenedor_nosotros">
+        
+                <h4 class="nosotros">Sobre nosotros</h4>
+                <p>Bienvenidos a Beauty Salon Gallery, tu destino de confianza para el cuidado y la belleza de tus uñas. Nuestro equipo
+                    de profesionales está dedicado a ofrecer servicios de alta calidad, combinando creatividad, estilo y técnicas
+                    modernas para resaltar tu personalidad.
+                
+                    Nos especializamos en manicura, pedicura, nail art y tratamientos personalizados, siempre con atención a los
+                    detalles y al bienestar de nuestros clientes. En Beauty Salon Gallery, transformamos cada visita en una experiencia
+                    única de belleza y relajación.
+                </p>
+        
+                <div class="grid-servicios">
+                    <div class="tarjeta-servicio">
+                        <i class="fas fa-hand-sparkles"></i>
+                        <h3>Manicura clásica y francesa</h3>
+                    </div>
+                    <div class="tarjeta-servicio">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3>Diseños personalizados y nail art</h3>
+                    </div>
+                    <div class="tarjeta-servicio">
+                        <i class="fas fa-spa"></i>
+                        <h3>Pedicura spa y exfoliación</h3>
+                    </div>
+                    <div class="tarjeta-servicio">
+                        <i class="fas fa-gem"></i>
+                        <h3>Aplicación de gel y acrílico</h3>
+                    </div>
+                    <div class="tarjeta-servicio">
+                        <i class="fas fa-tint"></i>
+                        <h3>Tratamientos hidratantes y fortalecedores</h3>
+                    </div>
+                </div>
+        
+            </div>
+            <section id="galeria" class="contendor-Galeria">
+                <h3>Galeria</h3>
+        
+                <div class="galeria">
+                    <img src="img/img1.jpg" alt="Uñas diseño 1">
+                    <img src="img/img2.jpg" alt="Uñas diseño 2">
+                    <img src="img/img4.jpg" alt="Uñas diseño 3">
+                    <img src="img/img5.jpg" alt="Uñas diseño 4">
+                    <img src="img/img6.jpg" alt="Uñas diseño 5">
+                    <img src="img/img7.jpg" alt="Uñas diseño 6">
+                </div>
+                <div>Servicios Destacados</div>
+                
+                </>
+            </section>
+            <!-- Modal oculto al inicio -->
+            <div id="modal" class="modal">
+                <span class="cerrar">&times;</span>
+                <img class="modal-contenido" id="imagen-modal">
+            </div>
+            <!-- <div class="entrada_Galeria">
+                            <picture>
+                                <source loading="lazy"  srcset="img/img3.jpg" type="image/webp">
+                                <img loading="lazy" src=img/img3.jpg" alt="imagen blog"> 
+                            </picture>
+                        </div> -->
+        
+        
+        </main>
+    </div>
+
+<script>
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("imagen-modal");
+  const cerrar = document.querySelector(".cerrar");
+
+  document.querySelectorAll(".galeria img").forEach(img => {
+    img.addEventListener("click", () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    });
+  });
+
+  cerrar.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // Cierra el modal si se hace clic fuera de la imagen
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+</script>
+
+<footer class="footer">
+  <div class="footer-contenido">
+    <p>Todos los derechos reservados &copy; 2025</p>
+    <div class="redes-sociales">
+      <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.twitter.com" target="_blank" aria-label="X"><i class="fab fa-X"></i><i class="fa-brands fa-square-x-twitter"></i>
+    </div>
+  </div>
+</footer>
+
+
+    
+
+</body>
+
+</html>
