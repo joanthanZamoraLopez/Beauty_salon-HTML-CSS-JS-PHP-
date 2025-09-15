@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="src/normalize.css">
   <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="src/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
@@ -25,7 +25,11 @@
         <h2>Contacto</h2>
         <p>Si tienes dudas o quieres agendar una cita, completa el siguiente formulario:</p>
 
-        <form action="enviar_contacto.php" method="POST" class="formulario-contacto">
+        <!-- Formulario Netlify -->
+        <form name="contacto" method="POST" data-netlify="true" onsubmit="mostrarConfirmacion(event)" class="formulario-contacto">
+            <!-- Campo oculto requerido por Netlify -->
+            <input type="hidden" name="form-name" value="contacto">
+
             <div class="form-group">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
@@ -43,25 +47,7 @@
 
             <div class="form-group">
                 <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..."
-                    required></textarea>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
             </div>
 
-            <button type="submit" class="btn-enviar">Enviar</button>
-        </form>
-    </section>
-</main>
-
-  <footer class="footer">
-    <div class="footer-contenido">
-      <p>Todos los derechos reservados &copy; 2025</p>
-      <div class="redes-sociales">
-        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-      </div>
-    </div>
-  </footer>
-
-</body>
-</html>
+            <button type="submit" class="b
