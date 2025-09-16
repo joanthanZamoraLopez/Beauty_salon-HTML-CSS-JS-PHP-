@@ -257,7 +257,11 @@ a {
 
 .btn-enviar:hover {
   background-color: blue;
-  transform: scale(1.15);
+  transform: scale(1.25);
+}
+.btn-whatsapp:hover {
+  background-color: green;
+  transform: scale(1.25);
 }
 
 /* ==================== NOSOTROS ==================== */
