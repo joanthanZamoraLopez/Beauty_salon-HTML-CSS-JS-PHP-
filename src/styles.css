@@ -314,9 +314,14 @@ a{
 }
 
 .btn-enviar:hover {
-  background-color: #d454a4;
-  transform: scale(1.05);
+  background-color: blue;
+  transform: scale(1.15);
 }
+.btn-whatsapp:hover {
+  background-color: #d4a954;
+  transform: scale(1.15);
+}
+
 
 html {
   scroll-behavior: smooth;
@@ -369,4 +374,117 @@ html {
 .tarjeta-servicio:hover {
   transform: translateY(-8px);
   box-shadow: 0 10px 20px rgba(218, 112, 214, 0.3);
+}
+
+/**************************** Responsive ******************************/
+
+/* 📱 Estilos para pantallas de hasta 768px (tablets y móviles grandes) */
+@media (max-width: 768px) {
+
+  /* Header y navegación */
+  .header {
+    flex-direction: column;
+    height: auto;
+    text-align: left;
+    padding: 1rem;
+  }
+
+  .logo {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .navegacion-principal {
+    display: flex;
+    flex-wrap: wrap; /* permite que baje si no hay espacio */
+    justify-content: left; /* centra horizontalmente */
+    gap: 1rem; /* espacio entre enlaces */
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    
+  }
+
+  /* Hero section */
+  .hero {
+    height: 250px;
+    background-position: center;
+  }
+
+  .hero__title {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+
+  /* Galería */
+  .galeria {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  /* Contacto */
+  .contacto {
+    padding: 1rem;
+    max-width: 95%;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.95rem;
+  }
+
+  /* Grid de servicios */
+  .grid-servicios {
+    grid-template-columns: 1fr 1fr; /* 2 columnas en tablet */
+    gap: 1rem;
+  }
+
+  .tarjeta-servicio h3 {
+    font-size: 1rem;
+  }
+
+  .redes-sociales a i {
+    font-size: 1.5rem;
+  }
+}
+
+/* 📱 Estilos para pantallas de hasta 480px (teléfonos pequeños) */
+@media (max-width: 480px) {
+
+  .logo {
+    font-size: 1.8rem;
+  }
+
+  .navegacion-principal {
+    font-size: 1rem;
+    text-align:left;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .grid-servicios {
+    grid-template-columns: 1fr; /* 1 columna en teléfonos */
+  }
+
+  .galeria {
+    grid-template-columns: 1fr; /* una imagen por fila */
+  }
+
+  .hero {
+    height: 180px;
+  }
+
+  .hero__title {
+    font-size: 1.2rem;
+  }
+
+  .formulario-contacto {
+    gap: 0.8rem;
+  }
+
+  .btn-enviar,.btn-whatsapp {
+    width: 100%;
+    font-size: 1rem;
+    
+  }
+
 }
