@@ -13,6 +13,7 @@
     
     
   }
+
 h2,h1,h4,.galeria_titulo{
   font-size: 2.5rem;
   animation: cambioColor 1s infinite; /* dura 4 segundos, repite infinito */
@@ -29,9 +30,8 @@ h2,h1,h4,.galeria_titulo{
 .logo {
     font-size: 2rem;
     font-weight: 700;
-    color: black;
     margin: 0;
-    font-size: 3rem;
+   
     
 }
 
@@ -385,14 +385,14 @@ html {
   .header {
     flex-direction: column;
     height: auto;
-    text-align: left;
+    text-align: center;
     padding: 1rem;
   }
 
   .logo {
     font-size: 2rem;
     margin-bottom: 0.5rem;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .navegacion-principal {
@@ -488,3 +488,44 @@ html {
   }
 
 }
+@media (max-width: 380px) {
+
+  .logo {
+    font-size: 1.8rem;
+  }
+
+  .navegacion-principal {
+    font-size: 1rem;
+    text-align:left;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .grid-servicios {
+    grid-template-columns: 1fr; /* 1 columna en teléfonos */
+  }
+
+  .galeria {
+    grid-template-columns: 1fr; /* una imagen por fila */
+  }
+
+  .hero {
+    height: 180px;
+  }
+
+  .hero__title {
+    font-size: 1.2rem;
+  }
+
+  .formulario-contacto {
+    gap: 0.8rem;
+  }
+
+  .btn-enviar,.btn-whatsapp {
+    width: 100%;
+    font-size: 1rem;
+    
+  }
+
+}
+
