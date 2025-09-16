@@ -308,6 +308,9 @@ a {
   .hero {
     min-height: 40vh;
   }
+  .hero__title{
+    font-size: 2rem;
+  }
 
   .galeria {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -327,6 +330,10 @@ a {
 
   .hero {
     min-height: 30vh;
+  }
+
+  .hero__title{
+    font-size: 1rem;
   }
 
   .grid-servicios {
