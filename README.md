@@ -35,7 +35,7 @@
 ## **Technologies Used**
 
 - **HTML5** – Website structure.
-- **JavaScript (optional)** – Interactive enhancements and animations.
+- **JavaScript** – Interactive enhancements and animations.
 - **PHP** – Contact form handling.
 - **Font Awesome** – Social media and service icons.
 - **Normalize.css** – Cross-browser style normalization.
@@ -53,7 +53,10 @@ beauty-salon/
 │ ├── styles.css # Main CSS styles
 │ └── normalize.css # CSS reset
 ├── img/ # Images folder
-
+  ##**UPDATE ##**
+ -  Lazy added in gallery.
+  - Image jpg replaced pof WEBP
+  
 
 License:
 
