@@ -1,84 +1,84 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - Beauty Salon</title>
-    <link rel="stylesheet" href="src/normalize.css">
-    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - Beauty Salon</title>
+  <link rel="stylesheet" href="src/normalize.css">
+  <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
 
-    <header class="header contenido">
-        <h1 class="logo">Beauty Salon Gallery</h1>
-        <nav class="navegacion-principal contenedor">
-            <a href="index.html">Inicio</a>
-            <a href="index.html#galeria">Galeria</a>
-            <a href="contacto.html">Contacto</a>
-        </nav>
-    </header>
+  <!-- Header -->
+  <header class="header contenido">
+    <h1 class="logo">Beauty Salon Gallery</h1>
+    <nav class="navegacion-principal contenedor">
+      <a href="index.html">Inicio</a>
+      <a href="index.html#galeria">Galería</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
 
-    <main>
-        <section class="contacto contenedor">
-            <h2>Contacto</h2>
-            <p>Si tienes dudas o quieres agendar una cita, completa el siguiente formulario:</p>
+  <!-- Main -->
+  <main>
+    <section class="contacto contenedor">
+        <h2>Contacto</h2>
+        <p>Si tienes dudas o quieres agendar una cita, completa el siguiente formulario:</p>
 
-            <!-- Formulario Netlify -->
-            <form name="contacto" method="POST" data-netlify="true" onsubmit="mostrarConfirmacion(event)">
-                <!-- Campo oculto requerido por Netlify -->
-                <input type="hidden" name="form-name" value="contacto">
+        <!-- Formulario para Netlify -->
+        <form name="contacto" method="POST" data-netlify="true" onsubmit="enviarFormulario(event)" class="formulario-contacto">
+            <input type="hidden" name="form-name" value="contacto">
 
-                <div class="form-group">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Correo electrónico:</label>
-                    <input type="email" id="email" name="email" placeholder="tuemail@ejemplo.com" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="asunto">Asunto:</label>
-                    <input type="text" id="asunto" name="asunto" placeholder="Motivo de contacto" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="mensaje">Mensaje:</label>
-                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..."
-                        required></textarea>
-                </div>
-
-                <button type="submit" class="btn-enviar">Enviar</button>
-            </form>
-
-            <!-- Mensaje de confirmación -->
-            <p id="mensaje-confirmacion" style="display:none; color:green; margin-top:1rem;">
-                ¡Gracias! Tu mensaje ha sido enviado correctamente.
-            </p>
-
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="footer-contenido">
-            <p>Todos los derechos reservados &copy; 2025</p>
-            <div class="redes-sociales">
-                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i
-                        class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i
-                        class="fab fa-instagram"></i></a>
-                <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
             </div>
-        </div>
-    </footer>
-<script src="src/contacto.js"></script>
+
+            <div class="form-group">
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="tuemail@ejemplo.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="asunto">Asunto:</label>
+                <input type="text" id="asunto" name="asunto" placeholder="Motivo de contacto" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+            </div>
+
+            <!-- Botones -->
+            <div class="botones-contacto">
+                <button type="submit" class="btn-enviar">Enviar por Correo</button>
+                <button type="button" class="btn-whatsapp" onclick="enviarPorWhatsApp()">Enviar por WhatsApp</button>
+            </div>
+        </form>
+
+        <!-- Mensaje de confirmación -->
+        <p id="mensaje-confirmacion" style="display:none; color:green; margin-top:1rem;">
+          ¡Gracias! Tu mensaje ha sido enviado correctamente.
+        </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-contenido">
+      <p>Todos los derechos reservados &copy; 2025</p>
+      <div class="redes-sociales">
+        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="src/contacto.js"></script>
 
 </body>
-
 </html>
