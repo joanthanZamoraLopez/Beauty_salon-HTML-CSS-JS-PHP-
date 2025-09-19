@@ -1,0 +1,24 @@
+{
+  "name": "beauty_salon",
+  "version": "1.0.0",
+  "description": "salon de belleza",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joanthanZamoraLopez/Beauty_salon-HTML-CSS-JS-PHP-.git"
+  },
+  "keywords": [
+    "SASS",
+    "NPM",
+    "GULP"
+  ],
+  "author": "Jonathan Zamora Lopez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joanthanZamoraLopez/Beauty_salon-HTML-CSS-JS-PHP-/issues"
+  },
+  "homepage": "https://github.com/joanthanZamoraLopez/Beauty_salon-HTML-CSS-JS-PHP-#readme"
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="src/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="src/validation.js" defer></script>
 </head>
+
 <body>
 
   <!-- Header -->
@@ -17,55 +20,84 @@
     <nav class="navegacion-principal contenedor">
       <a href="index.html">Inicio</a>
       <a href="index.html#galeria">Galería</a>
-      <a href="contacto.html">Contacto</a>
+      <a href="/Backend/admin_citas.php">Clientes</a>
     </nav>
   </header>
 
-  <!-- Main -->
   <main>
     <section class="contacto contenedor">
-        <h2>Contacto</h2>
-        <p>Si tienes dudas o quieres agendar una cita, completa el siguiente formulario:</p>
+      <h2>Contacto</h2>
+      <p>Si tienes dudas o quieres agendar una cita, completa el formulario:</p>
 
-        <!-- Formulario para Netlify -->
-        <form name="contacto" method="POST" data-netlify="true" onsubmit="enviarFormulario(event)" class="formulario-contacto">
-            <input type="hidden" name="form-name" value="contacto">
+      <!-- Formulario principal -->
+      <form id="form-contacto" class="formulario-contacto">
+        <div class="form-group">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+        </div>
 
-            <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-            </div>
+        <div class="form-group">
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email" placeholder="tuemail@ejemplo.com" required>
+        </div>
 
-            <div class="form-group">
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" placeholder="tuemail@ejemplo.com" required>
-            </div>
+        <div class="form-group">
+          <label for="telefono">Teléfono:</label>
+          <input type="text" id="telefono" name="telefono" placeholder="Tu teléfono">
+        </div>
 
-            <div class="form-group">
-                <label for="asunto">Asunto:</label>
-                <input type="text" id="asunto" name="asunto" placeholder="Motivo de contacto" required>
-            </div>
+        <div class="form-group">
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
+        </div>
 
-            <div class="form-group">
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
-            </div>
+        <!-- Botones -->
+        <div class="botones-contacto">
+          <button type="button" class="btn-whatsapp" onclick="enviarWhatsApp()">Enviar por WhatsApp</button>
+          <button type="button" class="btn-reserva" onclick="mostrarReserva()">Reservar Cita</button>
+        </div>
+      </form>
 
-            <!-- Botones -->
-            <div class="botones-contacto">
-                <button type="submit" class="btn-enviar">Enviar por Correo</button>
-                <button type="button" class="btn-whatsapp" onclick="enviarPorWhatsApp()">Enviar por WhatsApp</button>
-            </div>
-        </form>
+      <!-- Formulario de reserva (oculto inicialmente) -->
+      <form id="form-reserva" class="formulario-contacto" style="display:none; margin-top:1rem;" method="POST" action="Backend/guardar_cliente.php">
+        <!-- Campos ocultos para copiar datos de contacto -->
+        <input type="hidden" name="nombre" id="res-nombre">
+        <input type="hidden" name="email" id="res-email">
+        <input type="hidden" name="telefono" id="res-telefono">
+        <input type="hidden" name="mensaje" id="res-mensaje">
 
-        <!-- Mensaje de confirmación -->
-        <p id="mensaje-confirmacion" style="display:none; color:green; margin-top:1rem;">
-          ¡Gracias! Tu mensaje ha sido enviado correctamente.
-        </p>
+        <div class="form-group">
+          <label for="servicio">Servicio:</label>
+          <select id="servicio" name="servicio" required>
+            <option value="">Selecciona un servicio</option>
+            <option value="Corte de cabello">Corte de Cabello</option>
+            <option value="Tinte">Tinte</option>
+            <option value="Peinado">Peinado</option>
+            <option value="Manicura">Manicura</option>
+            <option value="Pedicura">Pedicura</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="fecha">Fecha:</label>
+          <input type="date" id="fecha" name="fecha" required>
+        </div>
+
+        <div class="form-group">
+          <label for="hora">Horario:</label>
+          <input type="time" id="hora" name="hora" required>
+        </div>
+
+        <button type="submit" class="btn-enviar">Confirmar Reserva</button>
+      </form>
+
+      <!-- Mensaje de confirmación -->
+      <p id="mensaje-confirmacion" style="display:none; color:green; margin-top:1rem;">
+        ¡Gracias! Tu mensaje ha sido enviado correctamente.
+      </p>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="footer-contenido">
       <p>Todos los derechos reservados &copy; 2025</p>
@@ -76,9 +108,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- JS -->
-  <script src="src/contacto.js"></script>
 
 </body>
 </html>
