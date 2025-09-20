@@ -9,7 +9,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="src/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- JS para validación del formulario -->
   <script src="src/validation.js" defer></script>
+  <!-- JS para login -->
+  <script src="src/login.js" defer></script>
 </head>
 
 <body>
@@ -20,8 +23,21 @@
     <nav class="navegacion-principal contenedor">
       <a href="index.html">Inicio</a>
       <a href="index.html#galeria">Galería</a>
-      <a href="/Backend/admin_citas.php">Clientes</a>
+      <a href="#" id="btn-clientes">Clientes</a>
+      <button id="btn-logout" class="btn_logout">Cerrar Sesión</button>
     </nav>
+
+    <!-- Modal de Login -->
+    <div id="login-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" id="close-login">&times;</span>
+        <h2>Login Admin</h2>
+        <div class="error-msg" id="login-error"></div>
+        <input type="text" id="modal-username" placeholder="Usuario">
+        <input type="password" id="modal-password" placeholder="Contraseña">
+        <button id="modal-login-btn">Ingresar</button>
+      </div>
+    </div>
   </header>
 
   <main>
@@ -51,16 +67,14 @@
           <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
         </div>
 
-        <!-- Botones -->
         <div class="botones-contacto">
           <button type="button" class="btn-whatsapp" onclick="enviarWhatsApp()">Enviar por WhatsApp</button>
           <button type="button" class="btn-reserva" onclick="mostrarReserva()">Reservar Cita</button>
         </div>
       </form>
 
-      <!-- Formulario de reserva (oculto inicialmente) -->
+      <!-- Formulario de reserva -->
       <form id="form-reserva" class="formulario-contacto" style="display:none; margin-top:1rem;" method="POST" action="Backend/guardar_cliente.php">
-        <!-- Campos ocultos para copiar datos de contacto -->
         <input type="hidden" name="nombre" id="res-nombre">
         <input type="hidden" name="email" id="res-email">
         <input type="hidden" name="telefono" id="res-telefono">
@@ -91,7 +105,6 @@
         <button type="submit" class="btn-enviar">Confirmar Reserva</button>
       </form>
 
-      <!-- Mensaje de confirmación -->
       <p id="mensaje-confirmacion" style="display:none; color:green; margin-top:1rem;">
         ¡Gracias! Tu mensaje ha sido enviado correctamente.
       </p>
@@ -109,5 +122,41 @@
     </div>
   </footer>
 
+  <script>
+    // Solo las funciones de contacto aquí (NO login)
+    function enviarWhatsApp() {
+      const nombre = document.getElementById('nombre').value;
+      const email = document.getElementById('email').value;
+      const mensaje = document.getElementById('mensaje').value;
+
+      if (!nombre || !email) {
+        alert('Por favor completa nombre y email');
+        return;
+      }
+
+      const texto = `Nombre: ${nombre}%0AEmail: ${email}%0AMensaje: ${mensaje}`;
+      const url = `https://api.whatsapp.com/send?phone=+5211234567890&text=${texto}`;
+      window.open(url, '_blank');
+    }
+
+    function mostrarReserva() {
+      const nombre = document.getElementById('nombre').value;
+      const email = document.getElementById('email').value;
+      const telefono = document.getElementById('telefono').value;
+
+      if (!nombre || !email || !telefono) {
+        alert('Por favor completa nombre, email y teléfono antes de reservar');
+        return;
+      }
+
+      document.getElementById('res-nombre').value = nombre;
+      document.getElementById('res-email').value = email;
+      document.getElementById('res-telefono').value = telefono;
+      document.getElementById('res-mensaje').value = document.getElementById('mensaje').value;
+
+      document.getElementById('form-reserva').style.display = 'block';
+      window.scrollTo({ top: document.getElementById('form-reserva').offsetTop - 20, behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
