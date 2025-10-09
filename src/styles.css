@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+ 
   
   
  
@@ -212,14 +213,21 @@ a {
 /* ==================== CONTACTO ==================== */
 .contacto,.editar_contenedor {
   max-width: 800px;
-  margin: 2rem auto;
+  margin:  auto;
   padding: 1rem;
   text-align: center;
   background-blend-mode:lighten;
   background-color: #ccc;
+ 
 
   border-radius: 18px;
-  
+}
+.contacto_fondo{
+
+   background-image: url(../img/img8.jpg);
+   background-size: 100%; /* Muestra más de la imagen (reduce el zoom) */
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .formulario-contacto {
@@ -263,6 +271,16 @@ a {
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.btn-whatsapp{
+   border-radius: 100%;
+   background-color:  #25D366;
+  
+}
+.btn-whatsapp svg {
+  width: 46px;   /* antes 28px */
+  height: 46px;  /* antes 28px */
+  color: white;
 }
 
 .btn-reserva:hover {

@@ -121,7 +121,7 @@ function enviarWhatsApp() {
   const email = document.getElementById("email").value;
   const mensaje = document.getElementById("mensaje").value;
 
-  const texto = `Nombre: ${nombre}%0AEmail: ${email}%0AMensaje: ${mensaje}`;
-  const url = `https://api.whatsapp.com/send?phone=+5211234567890&text=${texto}`;
+  const texto = `Hola mi nombre es  ${nombre} ${mensaje}`;
+  const url = `https://api.whatsapp.com/send?phone=+523326678151&text=${texto}`;
   window.open(url, "_blank");
 }
