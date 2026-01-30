@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="text" id="telefono" name="telefono" value="<?php echo htmlspecialchars($cliente['telefono']); ?>">
       </div>
 
-      <button type="submit" class="btn-enviar">💾 Guardar Cambios</button>
+      <button type="submit" class="btn-enviarBK">💾 Guardar Cambios</button>
     </form>
 
     <a href="admin_citas.php" class="btn-volver">🔙 Volver</a>

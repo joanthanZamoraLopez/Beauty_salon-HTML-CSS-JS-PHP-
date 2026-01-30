@@ -57,8 +57,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "✅ Cliente registrado correctamente.<br>";
     }
-
-    header("Location: admin_citas.php");
+    if(){
+    header("Location: admin_citas.php");}
     $conn->close();
 
 } else {

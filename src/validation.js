@@ -112,6 +112,48 @@ function mostrarReserva() {
   document.getElementById("form-reserva").style.display = "block";
   window.scrollTo({ top: document.getElementById("form-reserva").offsetTop - 20, behavior: "smooth" });
 }
+function ReservaExitosa(event) {
+  event.preventDefault(); // Evita que el formulario se envíe automáticamente
+
+  // Capturar valores de los campos
+  const nombre = document.getElementById("res-nombre").value;
+  const servicio = document.getElementById("servicio").value;
+  const fecha = document.getElementById("fecha").value;
+  const hora = document.getElementById("hora").value;
+
+  // Validar que todos los campos estén completos
+  if (!nombre || !servicio || !fecha || !hora) {
+    alert("Por favor, completa todos los campos antes de confirmar la cita.");
+    return;
+  }
+
+  // Mostrar resumen de cita
+  const resumen = document.getElementById("resumen-cita");
+  const detalles = document.getElementById("detalles-cita");
+
+  if (resumen && detalles) {
+    resumen.style.display = "block";
+    detalles.innerHTML = `
+      <strong>Nombre:</strong> ${nombre}<br>
+      <strong>Servicio:</strong> ${servicio}<br>
+      <strong>Fecha:</strong> ${fecha}<br>
+      <strong>Hora:</strong> ${hora}<br>
+    `;
+  }
+
+  // Mostrar un loading temporal
+  const loading = document.createElement("div");
+  loading.classList.add("loading");
+  loading.innerHTML = `<div class="spinner"></div><p>Confirmando tu cita...</p>`;
+  document.body.appendChild(loading);
+
+  // Esperar 3 segundos y redirigir al inicio
+  setTimeout(() => {
+    loading.remove();
+    window.location.href = "index.html"; // Cambia según tu página principal
+  }, 6000);
+}
+
 
 // Enviar por WhatsApp
 function enviarWhatsApp() {

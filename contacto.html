@@ -110,12 +110,18 @@
           <input type="time" id="hora" name="hora" required>
         </div>
 
-        <button type="submit" class="btn-enviar">Confirmar Reserva</button>
-      </form>
+        <button type="submit" class="btn-enviar" onclick="ReservaExitosa(event)">Confirmar Reserva</button>
+        <div id="resumen-cita" style="display:none; margin-top:1rem;">
+          <h3>Resumen de tu cita</h3>
+            <div id="detalles-cita"></div>
+         </div>
 
-      <p id="mensaje-confirmacion" style="display:none; color:green; margin-top:1rem;">
-        ¡Gracias! Tu mensaje ha sido enviado correctamente.
-      </p>
+      </form>
+       <p id="mensaje-confirmacion" style="display:none; color:green; margin-top:1rem;">
+            ¡Gracias! Tu mensaje ha sido enviado correctamente.
+       </p>
+
+
     </section>
   </main>
 

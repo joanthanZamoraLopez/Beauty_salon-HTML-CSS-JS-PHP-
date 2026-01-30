@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+    
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/joanthanZamoraLopez/Beauty_salon-HTML-CSS-JS-PHP-/issues"
   },
-  "homepage": "https://github.com/joanthanZamoraLopez/Beauty_salon-HTML-CSS-JS-PHP-#readme"
+  "homepage": "https://github.com/joanthanZamoraLopez/Beauty_salon-HTML-CSS-JS-PHP-#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
 }

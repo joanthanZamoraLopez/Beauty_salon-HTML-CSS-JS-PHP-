@@ -16,7 +16,7 @@ $result = $conn->query($sql);
   <link rel="stylesheet" href="/../src/normalize.css">
   <link rel="stylesheet" href="/../src/styles.css">
 </head>
-<body>
+<body class="contenedor-admin_citas">
 
   <h1 class="title_listaCitas">Lista de Citas</h1>
   <a href="/../contacto.html" class="btn-nuevo">➕ Nueva Cita</a>

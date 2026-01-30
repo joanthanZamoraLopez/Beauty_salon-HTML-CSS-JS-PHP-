@@ -261,7 +261,7 @@ a {
   box-shadow: 0 0 8px rgba(218, 112, 214, 0.3);
 }
 
-.btn-reserva,.btn-whatsapp,.btn-enviar {
+.btn-reserva,.btn-whatsapp,.btn-enviar,.btn-enviarBK {
   padding: 1rem 2rem;
   font-size: 1.1rem;
   font-weight: 700;
@@ -291,7 +291,7 @@ a {
   background-color: green;
   transform: scale(1.25);
 }
-.btn-enviar:hover{
+.btn-enviar,.btn-enviarBK:hover{
   background-color: blueviolet;
   transform: scale(1.25);
 }
@@ -423,6 +423,10 @@ a {
   background: #f9f9f9;
   padding: 2rem;
 }
+.contenedor-admin_citas{
+  background-image: url(../img/img8.jpg);
+  background-size: 100%;
+}
 
 .login_title {
   text-align: center;
@@ -491,6 +495,7 @@ tr:hover {
 }
 /*********************edit_cliente.php***********************/
 .admin-section {
+  
   max-width: 600px;
   margin: 2rem auto;
   padding: 2rem;
@@ -524,7 +529,7 @@ tr:hover {
   font-size: 1rem;
 }
 
-.btn-enviar {
+.btn-enviar,.btn-enviarBK {
   display: block;
   width: 100%;
   background-color: #d63384;
@@ -573,12 +578,14 @@ tr:hover {
 }
 
 .admin-section p {
+ 
   text-align: center;
   margin-bottom: 1.5rem;
   color: #333;
 }
 .admin-section {
-  background-color: #45f200;
+  background-image: url(../img/img8.jpg);
+  background-size: 100%;
 }
 
 /*************************Validation.js**************************************/
